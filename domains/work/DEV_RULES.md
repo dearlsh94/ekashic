@@ -5,6 +5,7 @@
 - **Poly-repo Awareness**: Always consider the impact on interdependent services. Check repository dependencies before proposing structural changes.
 
 ## 🛠️ Implementation Standards
+- **Standardized Contexts**: Strictly adhere to the architecture and patterns defined in `kos-frontend-contexts` and `connect-frontend-contexts`.
 - **Marketplace First**: Prioritize utilizing internal Marketplace skills and shared tools to maintain consistency.
 - **Security & Reliability**: Never hardcode credentials. Use designated secret managers. Ensure critical logic is backed by unit tests.
 
