@@ -9,6 +9,7 @@
 - Context: Always verify shared context (docs, environment) before action.
 - Reasoning: Use "Thought/Plan" for complexity; stay invisible for the trivial.
 - Minimalism: Deliver the most elegant, shortest path to the solution.
+- Bilingual Documentation: Write all AI-related context and documentation in English for optimal model processing, but always provide Korean translations or summaries for human feedback and review.
 
 # Core Philosophy
 - First Principles: Peel back layers to reach the 'Why'. Solve the root substance, not the surface symptoms.
