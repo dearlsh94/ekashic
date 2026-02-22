@@ -8,16 +8,26 @@
 
 ```bash
 # 1. 리포지토리 클론
-git clone [<your-repo-url>](https://github.com/dearlsh94/ai.git) ai
+git clone https://github.com/dearlsh94/ai.git
 cd ai
 
-# 2. 부트스트랩 실행 (uv 설치 + ekashic-manager MCP 등록)
+# 2. AI 컨텍스트 설정 (SOUL.md, DEV_RULES.md 심볼릭 링크)
+./setup.sh
+
+# 3. E-Kashic 마켓플레이스 초기화 (MCP 서버 등록)
 ./scripts/bootstrap.sh
 
-# 3. Claude Code에서 스킬 동기화
+# 4. Claude Code에서 스킬 동기화
 claude
 # → /ekashic-sync 실행
 ```
+
+### 스크립트 비교
+
+| 스크립트 | 목적 | 실행 시점 |
+| --- | --- | --- |
+| `setup.sh` | AI 철학/규칙 파일을 `~/.config/ai/`에 심볼릭 링크로 연결 (work/personal 환경 선택) | 새 기기 설정 시 또는 환경 전환 시 |
+| `scripts/bootstrap.sh` | E-Kashic 마켓플레이스 MCP 서버(`ekashic-manager`) 등록 | 최초 1회 (이후 `/ekashic-sync`로 동기화) |
 
 ---
 
