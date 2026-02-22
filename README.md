@@ -1,6 +1,3 @@
-# 📖 README.md
-
-```markdown
 # 🧠 AI Context Dotfiles for macOS
 
 이 리포지토리는 여러 대의 Mac 기기 간에 일관된 **AI 페르소나, 개발 규칙, 비서 지침**을 유지하기 위한 설정 관리 시스템입니다. 4계층(4-Layer) 구조와 심볼릭 링크(Symbolic Link)를 통해 업무와 개인 환경을 스마트하게 전환합니다.
@@ -21,9 +18,13 @@
 ├── agents/
 │   └── my-assistant/
 │       └── RULES.md         # [Layer 3] 비서 특화 규칙 (일정, 요약, 루틴)
+├── marketplace/
+│   ├── registry.json        # E-Kashic 스킬 레지스트리
+│   └── skills/              # MCP 기반 Claude Code 확장 스킬
+├── scripts/
+│   └── bootstrap.sh         # E-Kashic 마켓플레이스 초기 설정
 ├── setup.sh                 # 시스템 환경에 맞는 심볼릭 링크 생성 스크립트
 └── README.md                # 본 가이드 문서
-
 ```
 
 ---
@@ -39,7 +40,6 @@ mkdir -p ~/projects
 cd ~/projects
 git clone <your-repo-url> dotfiles-ai
 cd dotfiles-ai
-
 ```
 
 ### 2. 셋업 스크립트 실행
@@ -49,7 +49,6 @@ cd dotfiles-ai
 ```bash
 chmod +x setup.sh
 ./setup.sh
-
 ```
 
 ### 3. 연결 확인
@@ -59,6 +58,32 @@ chmod +x setup.sh
 * `~/.config/ai/SOUL.md`
 * `~/.config/ai/DEV_RULES.md` (선택한 환경에 따라 다름)
 * `~/.config/ai/AGENT_RULES.md`
+
+---
+
+## 🌌 E-Kashic Marketplace
+
+E-Kashic은 Claude Code를 위한 MCP 기반 스킬 마켓플레이스입니다. 한 번의 부트스트랩으로 모든 스킬을 자동 등록할 수 있습니다.
+
+### 요구사항
+
+* **Claude Code CLI** (`claude` 명령어)
+* **uv** (Python 패키지 매니저) - 없으면 자동 설치됨
+
+### 설치 방법
+
+```bash
+chmod +x scripts/bootstrap.sh
+./scripts/bootstrap.sh
+```
+
+이 스크립트는:
+1. `uv`가 없으면 자동으로 설치합니다
+2. `ekashic-manager` MCP 서버를 Claude Code에 등록합니다
+
+### 모든 스킬 동기화
+
+부트스트랩 후, Claude Code 내에서 `sync_ekashic_marketplace()` 도구를 사용하면 `marketplace/registry.json`에 등록된 모든 스킬이 자동으로 설치됩니다.
 
 ---
 
@@ -81,8 +106,6 @@ Claude Code나 기타 AI 에이전트 설정(예: `.ai/CLAUDE.md`)에 아래 지
 > 1. `~/.config/ai/SOUL.md` (나의 핵심 철학 및 페르소나)
 > 2. `~/.config/ai/DEV_RULES.md` (현재 환경에 특화된 개발 규칙)
 > 3. `~/.config/ai/AGENT_RULES.md` (비서로서의 상호작용 지침)
-> 
-> 
 
 ### 요약 가이드
 
@@ -100,19 +123,18 @@ Claude Code나 기타 AI 에이전트 설정(예: `.ai/CLAUDE.md`)에 아래 지
 가장 강력하게 연동됩니다. 파일 시스템을 직접 읽을 수 있기 때문입니다.
 
 * **방법 1 (추천):** 프로젝트 루트에 `CLAUDE.md`를 만들고 아래 내용을 적습니다.
+
 ```markdown
 Read and follow instructions in:
 - ~/.config/ai/SOUL.md
 - ~/.config/ai/DEV_RULES.md
 - ~/.config/ai/AGENT_RULES.md
-
 ```
 
-
 * **방법 2 (전역):** 터미널에서 아래 명령어를 한 번 실행합니다.
+
 ```bash
 /config set systemPrompt "Always reference and adhere to the instructions in ~/.config/ai/SOUL.md, ~/.config/ai/DEV_RULES.md, and ~/.config/ai/AGENT_RULES.md."
-
 ```
 
 ---
@@ -124,7 +146,6 @@ Claude의 **'Project'** 기능을 활용하는 것이 가장 효율적입니다.
 * **설정 방법:**
 1. **'Projects'** 메뉴에서 'Work'와 'Personal' 프로젝트를 각각 만듭니다.
 2. **'Project Knowledge'** 섹션에 `SOUL.md`와 해당 환경의 `DEV_RULES.md` 내용을 복사해서 메모(Custom Instructions)로 넣거나 파일을 업로드합니다.
-
 
 * **팁:** `SOUL.md`는 **'Custom Instructions'** 전역 설정에 넣어두면 모든 채팅에서 기본 페르소나로 작동합니다.
 
@@ -138,7 +159,6 @@ Claude의 **'Project'** 기능을 활용하는 것이 가장 효율적입니다.
 * *What would you like ChatGPT to know about you?*: `SOUL.md`의 철학을 요약해서 넣습니다.
 * *How would you like ChatGPT to respond?*: `Identity & Tone` 섹션의 내용을 넣습니다.
 
-
 * **DEV_RULES.md 적용:** 특정 업무용 **'GPT'**를 따로 만들어 'Knowledge' 섹션에 `DEV_RULES.md` 파일을 업로드해두면 해당 GPT와 대화할 때만 그 규칙이 적용됩니다.
 
 ---
@@ -150,7 +170,6 @@ Claude의 **'Project'** 기능을 활용하는 것이 가장 효율적입니다.
 * **설정 방법:**
 1. **'Gemini Gems'**에서 새로운 Gem을 만듭니다 (예: "My Work Partner").
 2. **'Instructions'** 칸에 `SOUL.md`와 `DEV_RULES.md`의 내용을 합쳐서 붙여넣습니다.
-
 
 * **Gemini Live 활용:** 이렇게 설정된 Gem은 모바일 Gemini Live에서도 그대로 적용되므로, 이동 중에 음성으로 대화할 때도 당신의 철학(SOUL)을 유지한 채 대답합니다.
 
@@ -166,7 +185,6 @@ echo "--- SOUL.md ---"
 cat ~/.config/ai/SOUL.md
 echo -e "\n--- DEV_RULES.md ---"
 cat ~/.config/ai/DEV_RULES.md
-
 ```
 
 이 스크립트를 실행해 나온 텍스트를 복사해서 각 AI의 설정 창에 **'덮어쓰기'**만 하면 동기화가 끝납니다.
@@ -182,19 +200,9 @@ cat ~/.config/ai/DEV_RULES.md
 * **High-Leverage Impact**: 가장 큰 변화를 만드는 핵심 작업에 우선순위를 둡니다.
 * **Living Docs**: 모든 지식은 실시간으로 동기화되며 부채를 남기지 않습니다.
 
-```
-
 ---
 
 ## 💡 활용 팁
 
 * **영문 컨텍스트, 한글 대화**: 모든 `.md` 설정 파일은 AI의 정확한 이해를 위해 **영문(English)**으로 작성하며, 사용자와의 소통은 **한글(Korean)**로 진행하도록 `SOUL.md`에 정의되어 있습니다.
 * **환경 전환**: 노트북의 용도가 변경되었다면 다시 `./setup.sh`를 실행하여 환경을 손쉽게 바꿀 수 있습니다.
-
----
-
-이제 이 내용을 리포지토리에 커밋하시면 멋진 AI 컨텍스트 관리 시스템의 대문이 완성됩니다. 
-
-**다음에 제가 도와드릴 일이 있을까요?** 예를 들어, `agents/my-assistant/RULES.md`에 들어갈 구체적인 **'비서용 루틴(아침 브리핑, 작업 로그 자동화 등)'**을 영문/한글 병기로 작성해 드릴 수 있습니다. 원하시면 말씀해 주세요!
-
-```

@@ -16,9 +16,9 @@ def ekashic_archive(title: str, content: str) -> str:
     date_prefix = datetime.now().strftime("%Y-%m-%d")
     safe_title = "".join([c if c.isalnum() or c == "-" else "-" for c in title.lower()])
     
-    plan_dir = "./.ai/plans"
+    plan_dir = os.path.expanduser("~/.ai/ekashic")
     os.makedirs(plan_dir, exist_ok=True)
-    
+
     file_path = os.path.join(plan_dir, f"{date_prefix}-{safe_title}.md")
     
     with open(file_path, "w", encoding="utf-8") as f:

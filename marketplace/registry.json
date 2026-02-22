@@ -9,6 +9,13 @@
       "description": "Ethan's personal tool for archiving high-leverage plans into .ai/plans/",
       "path": "marketplace/skills/archive-plan/server.py",
       "type": "mcp-python"
+    },
+    {
+      "id": "ekashic-manager",
+      "name": "E-Kashic Manager",
+      "description": "Marketplace synchronization tool - registers all E-Kashic skills to Claude Code",
+      "path": "marketplace/skills/ekashic-manager/server.py",
+      "type": "mcp-python"
     }
   ]
 }
