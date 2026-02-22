@@ -2,7 +2,7 @@
 
 # 1. 경로 설정 (Path Configuration)
 REPO_DIR="$(cd "$(dirname "$0")" && pwd)"
-CONFIG_DIR="$HOME/.config/ai"
+CONFIG_DIR="$HOME/.config/ekashic"
 
 echo "🚀 AI Context Setup Starting..."
 echo "-----------------------------------"

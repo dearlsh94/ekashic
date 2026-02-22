@@ -8,8 +8,8 @@
 
 ```bash
 # 1. 리포지토리 클론
-git clone https://github.com/dearlsh94/ai.git
-cd ai
+git clone https://github.com/dearlsh94/ekashic.git
+cd ekashic
 
 # 2. AI 컨텍스트 설정 (SOUL.md, DEV_RULES.md 심볼릭 링크)
 ./setup.sh
@@ -26,7 +26,7 @@ claude
 
 | 스크립트 | 목적 | 실행 시점 |
 | --- | --- | --- |
-| `setup.sh` | AI 철학/규칙 파일을 `~/.config/ai/`에 심볼릭 링크로 연결 (work/personal 환경 선택) | 새 기기 설정 시 또는 환경 전환 시 |
+| `setup.sh` | AI 철학/규칙 파일을 `~/.config/ekashic/`에 심볼릭 링크로 연결 (work/personal 환경 선택) | 새 기기 설정 시 또는 환경 전환 시 |
 | `scripts/bootstrap.sh` | E-Kashic 마켓플레이스 MCP 서버(`ekashic-manager`) 등록 | 최초 1회 (이후 `/ekashic-sync`로 동기화) |
 
 ---
@@ -88,7 +88,7 @@ chmod +x scripts/bootstrap.sh
 
 심볼릭 링크 방식이므로, 리포지토리 내부의 파일을 수정하고 Git으로 관리하기만 하면 모든 기기에 즉시 반영됩니다.
 
-1. **설정 수정:** `~/projects/dotfiles-ai/` 내부의 파일 수정
+1. **설정 수정:** `~/projects/ekashic/` 내부의 파일 수정
 2. **변경사항 반영 (A 노트북):** `git add . && git commit -m "Update rules" && git push`
 3. **설정 업데이트 (B 노트북):** `git pull` 수행 시 AI가 읽는 설정도 즉시 최신화됨
 
@@ -100,9 +100,9 @@ Claude Code나 기타 AI 에이전트 설정(예: `.ai/CLAUDE.md`)에 아래 지
 
 > **[Instruction]**
 > 작업을 시작하기 전, 다음 경로의 컨텍스트 파일들을 최우선으로 로드하고 준수해줘:
-> 1. `~/.config/ai/SOUL.md` (나의 핵심 철학 및 페르소나)
-> 2. `~/.config/ai/DEV_RULES.md` (현재 환경에 특화된 개발 규칙)
-> 3. `~/.config/ai/AGENT_RULES.md` (비서로서의 상호작용 지침)
+> 1. `~/.config/ekashic/SOUL.md` (나의 핵심 철학 및 페르소나)
+> 2. `~/.config/ekashic/DEV_RULES.md` (현재 환경에 특화된 개발 규칙)
+> 3. `~/.config/ekashic/AGENT_RULES.md` (비서로서의 상호작용 지침)
 
 ### 요약 가이드
 
@@ -123,15 +123,15 @@ Claude Code나 기타 AI 에이전트 설정(예: `.ai/CLAUDE.md`)에 아래 지
 
 ```markdown
 Read and follow instructions in:
-- ~/.config/ai/SOUL.md
-- ~/.config/ai/DEV_RULES.md
-- ~/.config/ai/AGENT_RULES.md
+- ~/.config/ekashic/SOUL.md
+- ~/.config/ekashic/DEV_RULES.md
+- ~/.config/ekashic/AGENT_RULES.md
 ```
 
 * **방법 2 (전역):** 터미널에서 아래 명령어를 한 번 실행합니다.
 
 ```bash
-/config set systemPrompt "Always reference and adhere to the instructions in ~/.config/ai/SOUL.md, ~/.config/ai/DEV_RULES.md, and ~/.config/ai/AGENT_RULES.md."
+/config set systemPrompt "Always reference and adhere to the instructions in ~/.config/ekashic/SOUL.md, ~/.config/ekashic/DEV_RULES.md, and ~/.config/ekashic/AGENT_RULES.md."
 ```
 
 ---
@@ -179,9 +179,9 @@ Claude의 **'Project'** 기능을 활용하는 것이 가장 효율적입니다.
 ```bash
 # sync_prompt.sh 예시
 echo "--- SOUL.md ---"
-cat ~/.config/ai/SOUL.md
+cat ~/.config/ekashic/SOUL.md
 echo -e "\n--- DEV_RULES.md ---"
-cat ~/.config/ai/DEV_RULES.md
+cat ~/.config/ekashic/DEV_RULES.md
 ```
 
 이 스크립트를 실행해 나온 텍스트를 복사해서 각 AI의 설정 창에 **'덮어쓰기'**만 하면 동기화가 끝납니다.
