@@ -14,6 +14,12 @@
       "name": "E-Kashic Insight Logger",
       "description": "원자적 인사이트를 ~/.ekashic/insights/에 기록",
       "path": "marketplace/skills/ekashic-insight.md"
+    },
+    {
+      "id": "writing-agent",
+      "name": "Writing Agent",
+      "description": "Ethan 스타일로 글 작성",
+      "path": "marketplace/skills/writing-agent.md"
     }
   ],
   "commands": [
@@ -36,6 +42,12 @@
       "name": "E-Kashic Manager",
       "description": "E-Kashic 마켓플레이스 동기화 - Skills, Commands, MCP 서버 일괄 등록",
       "path": "marketplace/mcp/ekashic-manager/server.py"
+    },
+    {
+      "id": "writing-agent",
+      "name": "Writing Agent",
+      "description": "Ethan 스타일 글쓰기 - 과거 글 검색, 페르소나/플랫폼 규칙 제공",
+      "path": "marketplace/mcp/writing-agent/server.py"
     }
   ]
 }
