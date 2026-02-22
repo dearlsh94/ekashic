@@ -1,0 +1,14 @@
+{
+  "marketplace_name": "E-Kashic",
+  "owner": "Ethan",
+  "version": "1.0.0",
+  "skills": [
+    {
+      "id": "ekashic-archive",
+      "name": "E-Kashic Archiver",
+      "description": "Ethan's personal tool for archiving high-leverage plans into .ai/plans/",
+      "path": "marketplace/skills/archive-plan/server.py",
+      "type": "mcp-python"
+    }
+  ]
+}
