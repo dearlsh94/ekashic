@@ -1,21 +1,35 @@
 {
   "marketplace_name": "E-Kashic",
   "owner": "Ethan",
-  "version": "1.0.0",
+  "version": "1.2.0",
   "skills": [
     {
       "id": "ekashic-archive",
       "name": "E-Kashic Archiver",
-      "description": "Ethan's personal tool for archiving high-leverage plans into .ai/plans/",
-      "path": "marketplace/skills/archive-plan/server.py",
-      "type": "mcp-python"
+      "description": "전략적 결정과 계획을 ~/.ai/ekashic/에 아카이브",
+      "path": "marketplace/skills/ekashic-archive.md"
+    }
+  ],
+  "commands": [
+    {
+      "id": "ekashic-archive",
+      "name": "E-Kashic Archiver",
+      "description": "전략적 결정과 계획을 ~/.ai/ekashic/에 아카이브",
+      "path": "marketplace/commands/ekashic-archive.md"
     },
+    {
+      "id": "ekashic-sync",
+      "name": "E-Kashic Sync",
+      "description": "E-Kashic 마켓플레이스 동기화 - 모든 Skills와 MCP를 설치",
+      "path": "marketplace/commands/ekashic-sync.md"
+    }
+  ],
+  "mcp": [
     {
       "id": "ekashic-manager",
       "name": "E-Kashic Manager",
-      "description": "Marketplace synchronization tool - registers all E-Kashic skills to Claude Code",
-      "path": "marketplace/skills/ekashic-manager/server.py",
-      "type": "mcp-python"
+      "description": "E-Kashic 마켓플레이스 동기화 - Skills, Commands, MCP 서버 일괄 등록",
+      "path": "marketplace/mcp/ekashic-manager/server.py"
     }
   ]
 }

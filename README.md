@@ -4,6 +4,23 @@
 
 ---
 
+## 🛠️ Install
+
+```bash
+# 1. 리포지토리 클론
+git clone <your-repo-url> ~/projects/ai
+cd ~/projects/ai
+
+# 2. 부트스트랩 실행 (uv 설치 + ekashic-manager MCP 등록)
+./scripts/bootstrap.sh
+
+# 3. Claude Code에서 스킬 동기화
+claude
+# → /ekashic-sync 실행
+```
+
+---
+
 ## 📂 리포지토리 구조 (Structure)
 
 ```text
@@ -19,8 +36,10 @@
 │   └── my-assistant/
 │       └── RULES.md         # [Layer 3] 비서 특화 규칙 (일정, 요약, 루틴)
 ├── marketplace/
-│   ├── registry.json        # E-Kashic 스킬 레지스트리
-│   └── skills/              # MCP 기반 Claude Code 확장 스킬
+│   ├── registry.json        # E-Kashic 레지스트리
+│   ├── skills/              # Skills (Claude 제안용 Markdown)
+│   ├── commands/            # Commands (사용자 /명령어 Markdown)
+│   └── mcp/                 # MCP 서버 (Python)
 ├── scripts/
 │   └── bootstrap.sh         # E-Kashic 마켓플레이스 초기 설정
 ├── setup.sh                 # 시스템 환경에 맞는 심볼릭 링크 생성 스크립트
