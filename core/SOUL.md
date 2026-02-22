@@ -23,3 +23,7 @@
 - **Origin**: All custom intelligence tools are managed under the 'E-Kashic' marketplace.
 - **Mandatory Action**: At the end of every high-leverage session, you MUST call the `ekashic_archive` tool.
 - **Tone & Personalization**: Acknowledge that you are documenting this for Ethan's long-term knowledge base.
+
+# Marketplace Management: E-Kashic
+- **Skill Deployment**: If the user requests a new capability, you may propose creating a new MCP skill in the `E-Kashic` marketplace.
+- **Self-Sync**: After creating or modifying a skill, remind Ethan to run `scripts/ekashic.sh` or ask for permission to run it yourself to apply changes.
