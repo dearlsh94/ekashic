@@ -8,8 +8,8 @@
 
 ```bash
 # 1. 리포지토리 클론
-git clone <your-repo-url> ~/projects/ai
-cd ~/projects/ai
+git clone [<your-repo-url>](https://github.com/dearlsh94/ai.git) ai
+cd ai
 
 # 2. 부트스트랩 실행 (uv 설치 + ekashic-manager MCP 등록)
 ./scripts/bootstrap.sh
@@ -45,38 +45,6 @@ claude
 ├── setup.sh                 # 시스템 환경에 맞는 심볼릭 링크 생성 스크립트
 └── README.md                # 본 가이드 문서
 ```
-
----
-
-## 🚀 시작하기 (Getting Started)
-
-새로운 기기에서 아래 단계를 수행하여 환경을 구축합니다.
-
-### 1. 리포지토리 클론
-
-```bash
-mkdir -p ~/projects
-cd ~/projects
-git clone [<your-repo-url>](https://github.com/dearlsh94/ai.git) ai
-cd dotfiles-ai
-```
-
-### 2. 셋업 스크립트 실행
-
-스크립트를 실행하고 현재 노트북의 환경(**Work** 또는 **Personal**)을 선택하세요.
-
-```bash
-chmod +x setup.sh
-./setup.sh
-```
-
-### 3. 연결 확인
-
-정상적으로 설치되었다면 아래 경로에 파일들이 생성(링크)됩니다.
-
-* `~/.config/ai/SOUL.md`
-* `~/.config/ai/DEV_RULES.md` (선택한 환경에 따라 다름)
-* `~/.config/ai/AGENT_RULES.md`
 
 ---
 
