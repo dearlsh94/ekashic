@@ -57,7 +57,7 @@ claude
 ```bash
 mkdir -p ~/projects
 cd ~/projects
-git clone <your-repo-url> dotfiles-ai
+git clone [<your-repo-url>](https://github.com/dearlsh94/ai.git) ai
 cd dotfiles-ai
 ```
 
