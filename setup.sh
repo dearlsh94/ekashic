@@ -39,6 +39,3 @@ fi
 echo "-----------------------------------"
 echo "✨ Setup Complete!"
 echo "Your AI contexts are now synced at: $CONFIG_DIR"
-
-# 5. 권한 처리
-chmod +x "$REPO_DIR/scripts/archive_plan.sh"
