@@ -8,6 +8,12 @@
       "name": "E-Kashic Archiver",
       "description": "전략적 결정과 계획을 ~/.ekashic/archive/에 아카이브",
       "path": "marketplace/skills/ekashic-archive.md"
+    },
+    {
+      "id": "ekashic-insight",
+      "name": "E-Kashic Insight Logger",
+      "description": "원자적 인사이트를 ~/.ekashic/insights/에 기록",
+      "path": "marketplace/skills/ekashic-insight.md"
     }
   ],
   "commands": [
