@@ -30,6 +30,12 @@
       "path": "marketplace/commands/ekashic-archive.md"
     },
     {
+      "id": "ekashic-insight",
+      "name": "E-Kashic Insight Logger",
+      "description": "원자적 인사이트를 ~/.ekashic/insights/에 기록",
+      "path": "marketplace/commands/ekashic-insight.md"
+    },
+    {
       "id": "ekashic-sync",
       "name": "E-Kashic Sync",
       "description": "E-Kashic 마켓플레이스 동기화 - 모든 Skills와 MCP를 설치",
