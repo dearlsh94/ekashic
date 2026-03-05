@@ -20,6 +20,12 @@
       "name": "Writing Agent",
       "description": "Ethan 스타일로 글 작성",
       "path": "marketplace/skills/writing-agent.md"
+    },
+    {
+      "id": "kos-localization",
+      "name": "KOS 다국어 생성",
+      "description": "KOS 프로젝트용 다국어 키/번역 생성",
+      "path": "marketplace/skills/kos-localization.md"
     }
   ],
   "commands": [
@@ -40,6 +46,12 @@
       "name": "E-Kashic Sync",
       "description": "E-Kashic 마켓플레이스 동기화 - 모든 Skills와 MCP를 설치",
       "path": "marketplace/commands/ekashic-sync.md"
+    },
+    {
+      "id": "kos-localization",
+      "name": "KOS 다국어 생성",
+      "description": "KOS 프로젝트용 다국어 키/번역 생성",
+      "path": "marketplace/commands/kos-localization.md"
     }
   ],
   "mcp": [
