@@ -52,6 +52,12 @@
       "name": "KOS 다국어 생성",
       "description": "KOS 프로젝트용 다국어 키/번역 생성",
       "path": "marketplace/commands/kos-localization.md"
+    },
+    {
+      "id": "ekashic-publish",
+      "name": "E-Kashic Publish",
+      "description": "~/.ekashic/ 로그를 ekashic 저장소로 병합 동기화하여 Git 관리",
+      "path": "marketplace/commands/ekashic-publish.md"
     }
   ],
   "mcp": [
