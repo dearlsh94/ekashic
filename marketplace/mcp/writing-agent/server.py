@@ -67,7 +67,7 @@ def search_writings(keywords: list[str], source: str = "all", limit: int = 3) ->
     # 검색 대상 디렉토리 결정
     dirs_to_search = []
     if source in ["linkedin", "all"]:
-        dirs_to_search.append(POSTS_DIR / "linked-in")
+        dirs_to_search.append(POSTS_DIR / "linkedIn")
     if source in ["blog", "all"]:
         dirs_to_search.append(POSTS_DIR / "blog")
 
